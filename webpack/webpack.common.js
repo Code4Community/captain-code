@@ -36,7 +36,6 @@ module.exports = {
       { from: 'src/favicon.ico', to: '' }
     ]),
     new InjectManifest({
-      maximumFileSizeToCacheInBytes: 5000000000,
       swSrc: path.resolve(__dirname, '../pwa/sw.js')
     })
   ]
