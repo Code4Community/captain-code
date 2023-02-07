@@ -1,4 +1,5 @@
 import { Scene3D } from '@enable3d/phaser-extension'
+import duck from "../../assets/Duck.glb";
 
 export default class MainScene extends Scene3D {
   constructor() {
