@@ -14,7 +14,10 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js']
   },
   module: {
-    rules: [{ test: /\.tsx?$/, include: path.join(__dirname, '../src'), loader: 'ts-loader' }]
+    rules: [
+      { test: /\.tsx?$/, include: path.join(__dirname, '../src'), loader: 'ts-loader' },
+      { test: /\.(gif|png|jpe?g|svg|xml|glb)$/i, type: "asset/resource" }
+    ]
   },
   optimization: {
     splitChunks: {
@@ -36,7 +39,6 @@ module.exports = {
       { from: 'src/favicon.ico', to: '' }
     ]),
     new InjectManifest({
-      maximumFileSizeToCacheInBytes: 5000000000,
       swSrc: path.resolve(__dirname, '../pwa/sw.js')
     })
   ]
